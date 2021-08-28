@@ -2,8 +2,8 @@ Pyrogram
 TgCrypto
 pytgcalls
 python-dotenv
-youtube_dl
-youtube_search_python
+youtube_dl==2021.06.07
+youtube-search-python==1.3.4
 requests
 aiohttp
 aiofiles
@@ -11,9 +11,10 @@ asyncio
 youtube_search
 search_engine_parser
 ffmpeg-python
-Pillow
+pillow==8.0.1
 python-arq
 future
 psutil
+we-get==1.0.1
+tswift 
 wget
-tswift
