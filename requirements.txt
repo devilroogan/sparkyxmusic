@@ -3,7 +3,7 @@ TgCrypto
 pytgcalls
 python-dotenv
 youtube_dl==2021.6.6
-youtube-search-python==1.3.4
+youtube-search-python
 requests
 aiohttp
 aiofiles
@@ -11,10 +11,9 @@ asyncio
 youtube_search
 search_engine_parser
 ffmpeg-python
-pillow==8.0.1
+pillow
 python-arq
 future
 psutil
-we-get==1.0.1
 tswift 
 wget
