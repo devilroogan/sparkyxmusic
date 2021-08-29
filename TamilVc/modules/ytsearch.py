@@ -17,7 +17,7 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 @app.on_message(pyrogram.filters.command(["search"]))
 async def ytsearch(_, message: Message):
     try:
-        if len(message.command) < 2:
+        if len(message.command) < 1:
             await message.reply_text("/search needs an argument!")
             return
         query = message.text.split(None, 1)[1]
