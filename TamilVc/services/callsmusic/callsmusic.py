@@ -1,6 +1,6 @@
 from typing import Dict
 
-from pytgcalls import GroupCall
+from pytgcalls import GroupCall, GroupCallFactory
 
 from TamilVc.services.callsmusic import client
 from TamilVc.services.queues import queues
