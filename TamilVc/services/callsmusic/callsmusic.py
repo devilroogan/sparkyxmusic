@@ -1,18 +1,18 @@
 from typing import Dict
 
-from pytgcalls import GroupCallFactory
+from pytgcalls import GroupCall
 
 from TamilVc.services.callsmusic import client
 from TamilVc.services.queues import queues
 
 
-instances: Dict[int, GroupCallFactory] = {}
+instances: Dict[int, GroupCall] = {}
 active_chats: Dict[int, Dict[str, bool]] = {}
 
 
 def init_instance(chat_id: int):
     if chat_id not in instances:
-        instances[chat_id] = GroupCallFactory(client,outgoing_audio_bitrate_kbit=320).get_file_group_call()
+        instances[chat_id] = GroupCall(client,outgoing_audio_bitrate_kbit=320).get_file_group_call()
 
     instance = instances[chat_id]
 
@@ -23,7 +23,7 @@ def init_instance(chat_id: int):
         if queues.is_empty(chat_id):
             await stop(chat_id)
         else:
-            instance.input_filename = queues.get(chat_id)["file"]
+            instance.input_filename = queues.get(chat_id)["file_path"]
 
 
 def remove(chat_id: int):
@@ -37,7 +37,7 @@ def remove(chat_id: int):
         del active_chats[chat_id]
 
 
-def get_instance(chat_id: int) -> GroupCallFactoy:
+def get_instance(chat_id: int) -> GroupCall:
     init_instance(chat_id)
     return instances[chat_id]
 
