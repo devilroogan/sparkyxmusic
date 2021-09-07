@@ -1,6 +1,6 @@
 from typing import Dict
 
-from pytgcalls import GroupCall, GroupCallFactory
+from pytgcalls import GroupCallFactory
 
 from TamilVc.services.callsmusic import client
 from TamilVc.services.queues import queues
@@ -37,7 +37,7 @@ def remove(chat_id: int):
         del active_chats[chat_id]
 
 
-def get_instance(chat_id: int) -> GroupCall:
+def get_instance(chat_id: int) -> GroupCallFactoy:
     init_instance(chat_id)
     return instances[chat_id]
 
