@@ -6,7 +6,7 @@ from TamilVc.services.callsmusic import client
 from TamilVc.services.queues import queues
 
 
-instances: Dict[int, GroupCall] = {}
+instances: Dict[int, GroupCallFactory] = {}
 active_chats: Dict[int, Dict[str, bool]] = {}
 
 
